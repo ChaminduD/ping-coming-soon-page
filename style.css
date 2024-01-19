@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Libre Franklin", sans-serif;
+}
+body{
+    background-color: hsl(0, 0%, 100%);
+}
+header{
+    text-align: center;
+    margin: 80px 20px 20px ;
+}
+header img{
+    width: clamp(60px, 18%, 86px);
+    padding-bottom: 40px;
+}
+h1 span{
+    font-weight: 300;
+    color: hsl(0, 0%, 59%);
+}
+h1{
+    font-size: clamp(26px, 6vw, 48px);
+    color: hsl(209, 33%, 12%);
+    font-weight: 700;
+}
+header p{
+    font-size: clamp(14px, 3vw, 20px);
+    color: hsl(209, 33%, 12%);
+    padding: 20px 0;
+}
+main{
+    text-align: center;
+}
+input{
+    width: 78%;
+    padding: 14px 36px;
+    border: 1px solid hsl(223, 100%, 88%);
+    border-radius: 25px;
+    font-size: 14px;
+}
+input::placeholder{
+    color: hsl(223, 100%, 88%);
+}
+#error{
+    color: hsl(354, 100%, 66%);
+    font-style: italic;
+    font-size: clamp(12px, 3vw, 14px);
+    padding: 8px 0 0;
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+button{
+    background-color: hsl(223, 87%, 63%);
+    color: hsl(0, 0%, 100%);
+    width: 78%;
+    padding: 14px 20px;
+    border-radius: 25px;
+    border: 0;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 10px 10px hsla(223, 87%, 63%, 0.2);
+    cursor: pointer;
+    position: absolute;
+    transform: translateX(-50%);
+}
+button:hover{
+    background-color: hsla(223, 87%, 63%, 0.8);
+}
+main img{
+    width: clamp(330px, 88%, 640px);
+    margin-top: 120px;
+}
+footer{
+    text-align: center;
+    width: 100%;
+    margin-top: 70px;
+}
+i{
+    color: hsl(223, 87%, 63%);
+    padding: 10px;
+    margin: 10px 6px 34px;
+    font-size: 16px;
+    border: 2px solid hsla(0, 0%, 59%, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in;
+    cursor: pointer;
+}
+i:hover{
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(223, 87%, 63%);
+}
+.fa-facebook-f{
+    padding: 10px 14px;
+}
+.copyright{
+    font-size: clamp(8px, 3vw, 12px);
+    color: hsl(0, 0%, 59%);
+}
+.attribution{
+    font-size: 11px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    color: hsl(0, 0%, 59%);
+}
+.attribution a{
+    color: hsl(223, 87%, 63%);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 600px){
+    input{
+        width: 420px;
+        padding: 18px 28px;
+        font-size: 16px;
+        border-radius: 40px;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+    }
+    #error{
+        text-align: left;
+        position: absolute;
+        font-size: 12px;
+        padding-left: 28px;
+        width: auto;
+    }
+    button{
+        position: relative;
+        width: 200px;
+        margin-left: 16px;
+        font-size: 16px;
+        padding: 18px 20px;
+        border-radius: 40px;
+        margin-top: auto;
+        transform: translateX(0);
+    }
+    main img{
+        margin-top: 86px;
+    }
+    i{
+        font-size: 14px;
+        padding: 7px;
+        margin: 0 4px 24px;
+    }
+    .fa-facebook-f{
+        padding: 7px 10px;
+    }
+    .attribution{
+        margin-top: 10px;
+    }
+  }

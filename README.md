@@ -55,6 +55,8 @@ header img{
 }
 ```
 ```js
+let deviceWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
 function notifyMe(){
   if(emailInput.value.length == 0){
     errorTxt.style.display = "block";
@@ -66,6 +68,10 @@ function notifyMe(){
     emailInput.style.borderColor = "hsl(354, 100%, 66%)";
   }else{
     btn.type = "submit";
+  }
+
+  if(deviceWidth < 600){
+    btn.style.marginTop = "40px";
   }
 }
 ```

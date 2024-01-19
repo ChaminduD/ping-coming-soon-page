@@ -5,169 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/f9ecd33115.js" crossorigin="anonymous"></script>
   
   <title>Frontend Mentor | Ping coming soon page</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
-
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Libre Franklin", sans-serif;
-    }
-    body{
-      background-color: hsl(0, 0%, 100%);
-      max-height: 100vh;
-      width: 100%;
-    }
-    header{
-      text-align: center;
-      margin: 80px 20px 20px ;
-    }
-    header img{
-      width: clamp(60px, 18%, 80px);
-      padding-bottom: 40px;
-    }
-    h1 span{
-      font-weight: 300;
-      color: hsl(0, 0%, 59%);
-    }
-    h1{
-      font-size: clamp(26px, 6vw, 40px);
-      color: hsl(209, 33%, 12%);
-      font-weight: 700;
-    }
-    header p{
-      font-size: clamp(14px, 3vw, 17px);
-      color: hsl(209, 33%, 12%);
-      padding: 20px 0;
-    }
-    main{
-      text-align: center;
-    }
-    input{
-      width: 78%;
-      padding: 14px 36px;
-      border: 1px solid hsl(223, 100%, 88%);
-      border-radius: 25px;
-      font-size: 14px;
-    }
-    input::placeholder{
-      color: hsl(223, 100%, 88%);
-    }
-    #error{
-      color: hsl(354, 100%, 66%);
-      font-style: italic;
-      font-size: clamp(12px, 3vw, 14px);
-      padding: 8px 0 16px;
-      display: none;
-    }
-    button{
-      background-color: hsl(223, 87%, 63%);
-      color: hsl(0, 0%, 100%);
-      width: 78%;
-      padding: 14px 20px;
-      border-radius: 25px;
-      border: 0;
-      margin-top: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      box-shadow: 0 10px 10px hsla(223, 87%, 63%, 0.2);
-      cursor: pointer;
-    }
-    button:hover{
-      background-color: hsla(223, 87%, 63%, 0.8);
-    }
-    main img{
-      width: clamp(330px, 88%, 522px);
-      position: absolute;
-      bottom: clamp(180px, 28%, 270px);
-      transform: translateX(-50%);
-      z-index: -1;
-    }
-    footer{
-      text-align: center;
-      width: 100%;
-      position: fixed;
-      bottom: 0;
-    }
-    i{
-      color: hsl(223, 87%, 63%);
-      padding: 10px;
-      margin: 10px 6px 34px;
-      font-size: 16px;
-      border: 2px solid hsla(0, 0%, 59%, 0.2);
-      border-radius: 50%;
-      transition: background-color 0.3s ease-in;
-      cursor: pointer;
-    }
-    i:hover{
-      color: hsl(0, 0%, 100%);
-      background-color: hsl(223, 87%, 63%);
-    }
-    .fa-facebook-f{
-      padding: 10px 14px;
-    }
-    .copyright{
-      font-size: clamp(8px, 3vw, 12px);
-      color: hsl(0, 0%, 59%);
-    }
-    .attribution{
-      font-size: 11px;
-      text-align: center;
-      margin-top: 20px;
-      padding-bottom: 15px;
-      color: hsl(0, 0%, 59%);
-    }
-    .attribution a{
-      color: hsl(223, 87%, 63%);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    @media only screen and (min-width: 600px){
-      input{
-        width: clamp(100px, 40%, 340px);
-        padding: 14px 28px;
-      }
-      #error{
-        width: 100%;
-        font-size: 10px;
-        position: absolute;
-        padding-right: 300px;
-      }
-      button{
-        width: clamp(50px, 20%, 170px);
-        margin-left: 10px;
-      }
-      main img{
-        bottom: 300px;
-      }
-      i{
-        font-size: 16px;
-        padding: 7px;
-        margin: 0 4px 24px;
-      }
-      .fa-facebook-f{
-        padding: 7px 10px;
-      }
-      .attribution{
-        margin-top: 10px;
-      }
-    }
-
-    @media only screen and (min-width: 960px){
-      header p{
-        padding-top: 12px;
-        padding-bottom: 2px;
-      }
-      main img{
-        bottom: 180px;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -178,8 +19,11 @@
 
   <main>
     <form>
-      <input type="email" name="Email" id="email" placeholder="Your email address..." >
-      <p id="error"></p>
+      <div>
+        <input type="email" name="Email" id="email" placeholder="Your email address..." >
+        <span id="error"></span>
+      </div>
+      
       <button type="button" id="btn" onclick="notifyMe()">Notify Me</button>
     </form>
     <img src="images/illustration-dashboard.png" alt="Illustration Dashboard">
@@ -202,6 +46,7 @@
     let emailInput = document.getElementById("email");
     let errorTxt = document.getElementById("error");
     let btn = document.getElementById("btn");
+    let deviceWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
     function notifyMe(){
 
@@ -215,6 +60,10 @@
         emailInput.style.borderColor = "hsl(354, 100%, 66%)";
       }else{
         btn.type = "submit";
+      }
+
+      if(deviceWidth < 600){
+        btn.style.marginTop = "40px";
       }
     }
   </script>
